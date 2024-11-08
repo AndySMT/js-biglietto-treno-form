@@ -14,42 +14,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="badge-danger">
     <!-- <nav class="navbar navbar-expand navbar-light bg-light justify-content-center">
         <div class="nav navbar-nav">
             <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Acquista Biglietto</a>
         </div>
     </nav> -->
-    <section>
-        <h1>Calcola il prezzo del tuo biglietto</h1>
-        <div class="container">
-            <div class="row d-flex">
+    <section >
+        <form id="buy">
+            <h1 class="d-flex justify-content-center">Calcola il prezzo del tuo biglietto</h1>
+            <div class="container bg-dark">
+            <div class="row p-3 border">
                 <div class="form-group col-4">
                     <label for="name" class="">Nome Cognome
                     </label>
-                    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-                    <label for="name" class="">Km da percorrere
+                    <input type="text" class="form-control" name="" id="nome" aria-describedby="helpId"
+                        placeholder="Es. Gigi Becali" required>
+                </div>
+                <div class="form-group col-4">
+                    <label for="km" class="">Km da percorrere
                     </label>
-                    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-                    <div class="form-group">
-                        <label for=""></label>
-                        <select class="form-control" name="" id="">
-                            <option></option>
-                            <option>Minorenne</option>
-                            <option>Maggiorenne</option>
-                            <option value="">Adulto</option>
-                        </select>
-                    </div>
+                    <input type="text" class="form-control" name="" id="km" aria-describedby="helpId"
+                        placeholder="Es. 10" required>
+                </div>
+                <div class="form-group col-4">
+                    <label for="age">Fascia d'eta'</label>
+                    <select class="form-control" name="age" id="age" required>
+                        <option selected disabled>La tua eta'</option>
+                        <option value="">Minorenne</option>
+                        <option value="">Maggiorenne</option>
+                        <option value="">Adulto</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-center col-12">
+                    <button type="submit" class="btn btn-primary" id="btnSub">Submit</button>
+                    <button type="reset" class="btn btn-primary ml-2">Reset</button>
                 </div>
             </div>
-            <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="reset" class="btn btn-primary">Reset</button>
+            <div class="row p-3 border mt-3" id="ticket">
+            <p>Ticket</p>
             </div>
         </div>
+        </div>
+        </form>
     </section>
     <!-- Optional JavaScript -->
+    <script src="script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
