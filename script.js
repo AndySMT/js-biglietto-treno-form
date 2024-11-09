@@ -13,20 +13,21 @@ function onSubmitClick(event) {
   document.getElementById("carrozza").innerHTML = randomNumber(1, 10);
   document.getElementById("offerta").innerHTML = inpAge.value;
   calcolaPrezzo();
+  inpTicket.innerHTML;
 }
 
 function calcolaPrezzo() {
   let km = inpKm.value;
-  let age = inpAge.value;
+  let age = parseInt(inpAge.value);
   let prezzo = km * 0.21;
   let sconto = 0;
-  if (age == "minorenne") {
+  if (age <= 17) {
     sconto = (prezzo * 20) / 100;
-  } else if (age == "adulto") {
+  } else if (age >= 65) {
     sconto = prezzo * 0.4;
   }
   prezzo -= sconto;
-  document.getElementById("costo").innerHTML = prezzo + "€";
+  document.getElementById("costo").innerHTML = prezzo.toFixed(2) + "€";
 }
 
 function randomNumber(min, max) {
