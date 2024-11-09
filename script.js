@@ -13,7 +13,7 @@ function onSubmitClick(event) {
   document.getElementById("carrozza").innerHTML = randomNumber(1, 10);
   document.getElementById("offerta").innerHTML = inpAge.value;
   calcolaPrezzo();
-  inpTicket.innerHTML;
+  inpTicket.classList.remove("d-none");
 }
 
 function calcolaPrezzo() {
