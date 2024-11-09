@@ -11,9 +11,16 @@ function onSubmitClick(event) {
   document.getElementById("passeggero").innerHTML = UserName;
   document.getElementById("codice").innerHTML = randomNumber(1000, 5000);
   document.getElementById("carrozza").innerHTML = randomNumber(1, 10);
-  document.getElementById("offerta").innerHTML = inpAge.value;
+  if (inpAge.value <= 17) {
+    document.getElementById("offerta").innerHTML = "Minorenni";
+  } else if (inpAge.value >= 65) {
+    document.getElementById("offerta").innerHTML = "Over 65";
+  } else {
+    document.getElementById("offerta").innerHTML = "Tariffa Standard";
+  }
   calcolaPrezzo();
   inpTicket.classList.remove("d-none");
+  document.querySelector(".hide").classList.remove("hide");
 }
 
 function calcolaPrezzo() {
@@ -32,4 +39,8 @@ function calcolaPrezzo() {
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function resetForm() {
+  document.getElementById("buy").reset();
 }
