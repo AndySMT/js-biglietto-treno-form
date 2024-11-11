@@ -3,13 +3,17 @@ let inpKm = document.getElementById("km");
 let inpAge = document.getElementById("age");
 let inpTicket = document.getElementById("ticket");
 let btnSub = document.getElementById("btnSub");
+let btnReset = document.getElementById("btnReset");
 
 btnSub.addEventListener("click", onSubmitClick);
+btnReset.addEventListener("click", resetForm);
+
 function onSubmitClick(event) {
   event.preventDefault();
   let UserName = inpName.value;
   document.getElementById("passeggero").innerHTML = UserName;
-  document.getElementById("codice").innerHTML = randomNumber(1000, 5000);
+  document.getElementById("codice").innerHTML =
+    "CP " + randomNumber(1000, 5000);
   document.getElementById("carrozza").innerHTML = randomNumber(1, 10);
   if (inpAge.value <= 17) {
     document.getElementById("offerta").innerHTML = "Minorenni";
@@ -43,4 +47,6 @@ function randomNumber(min, max) {
 
 function resetForm() {
   document.getElementById("buy").reset();
+  inpTicket.classList.add("d-none");
+  document.querySelector(".hide").classList.add("hide");
 }
